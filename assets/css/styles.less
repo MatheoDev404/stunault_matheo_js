@@ -45,7 +45,7 @@ table {
 
 // CSS GLOBAL
 
-// tailles ecran
+// tailles écran
 @smartphones: ~"only screen and (max-width: 480px)";
 @tablettes: ~"only screen and (max-width: 975px)";
 @tablettesPaysage: ~"only screen and (max-width: 1300px)";
@@ -178,6 +178,8 @@ main{
                 #tete_chat{
                     background: @tete_chat_defaut url(../img/tete-chat.png)50% 50%;
                     background-size: cover; 
+                    transition: background-color 1s;
+                    
                     @media @tablettesPaysage {
                         height: 300px;
                         
