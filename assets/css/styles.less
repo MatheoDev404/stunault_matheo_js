@@ -1,0 +1,207 @@
+// RESET CSS
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// CSS GLOBAL
+
+// tailles ecran
+@smartphones: ~"only screen and (max-width: 480px)";
+@tablettes: ~"only screen and (max-width: 975px)";
+@tablettesPaysage: ~"only screen and (max-width: 1300px)";
+
+
+// Couleurs
+@navbar : #061339;
+@premier_bloc : #B9CDFF;
+@titre_h1 : #FFF;
+@autres_titres : #2F4073;
+@footer : #061339;
+@tete_chat_defaut : #7885A5;
+@tete_chat_hover : #061339;
+@main_bgc : #061339;
+
+// FONTS
+@Merienda : 'Merienda', cursive;
+
+// classes globales
+.container{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+
+// HEADER 
+
+#main_header{
+    h2 {
+        background-color: @navbar;
+        font-size: 1.6rem;
+        line-height: 4rem;
+        @media @tablettesPaysage {
+            padding-left: 1rem;
+        }
+
+        a{
+            color : @titre_h1;
+            display : block;
+            font-family : @Merienda;
+            .container;
+            &:hover{
+                text-decoration: none;
+            }
+            span{
+                .uppercase;
+            }
+        }
+    }
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 8rem;
+        color: @titre_h1;
+        font-family: @Merienda;
+        background-image: url(../img/background.jpg);
+        text-shadow: 2px 2px 2px black;
+        @media @tablettesPaysage {
+            padding: 0 5rem;
+        }
+    }
+}
+
+// MAIN
+main{
+    background-color: rgb(240, 239, 239);
+    padding-top: 3.5rem; 
+    
+
+    //Adoption
+    #adoption{
+        @media @tablettesPaysage {
+            display:flex;
+            justify-content: flex-end;
+        }
+        .container;
+        h2 {
+            color: @autres_titres;
+            font-family: @Merienda;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 2.5rem;
+        }
+        form{
+            border: 1px rgba(143, 143, 142, 0.521) solid;
+            border-radius:5px;
+            padding: 5%;
+
+            label {
+                font-weight: bold;
+                line-height: 2rem;
+            }
+        }
+    }
+
+    //Nos chats
+    #nos_chats{
+        margin-top: 4rem;
+        padding: 2rem 0;
+        background: rgb(224, 222, 222);
+        @media @tablettesPaysage {
+            padding: 2rem;
+        }
+        
+        div{
+            .container;
+            h2 {
+                .container;
+                color: @autres_titres;
+                font-family: @Merienda;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                line-height: 4rem;
+            }
+            div{
+                .container;
+                p{
+                    font-size: 1.2rem;
+                    span {
+                        display: block;
+                        padding-bottom: 1rem;
+                    }
+                }
+                #tete_chat{
+                    background: @tete_chat_defaut url(../img/tete-chat.png)50% 50%;
+                    background-size: cover; 
+                    @media @tablettesPaysage {
+                        height: 300px;
+                        
+                    }
+                }
+            }
+        }
+        &:hover{
+            #tete_chat{
+                background-color: @tete_chat_hover;
+            }
+        }
+        
+    }
+}
+
+// FOOTER
+
+#main_footer{
+    background-color: @footer;
+    color: white;
+    text-align: right;
+    padding: 1rem;
+    span{
+        .uppercase;
+    }
+}
